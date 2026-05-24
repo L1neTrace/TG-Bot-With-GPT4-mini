@@ -6,8 +6,8 @@
 
 ## 📦 Используемые библиотеки
 
-1.  **`Telethon`** — стабильная библиотека для работы с Telegram API.
-2.  **OpenAI SDK** — библиотека для отправки запросов к GPT-4 mini через API.
+1.  **`Telethon`** — стабильная библиотека для работы с Telegram API. Установить: `pip install telethon`
+2.  **OpenAI** — библиотека для отправки запросов к GPT-4 mini через API. Установить: `pip install openai`
 
 ---
 
