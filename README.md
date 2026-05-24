@@ -1,29 +1,54 @@
-# TG-Bot-With-GPT4-mini
-# Телеграмм бот с внутренним Chat GPT4 Mini
+# 🤖 TG-Bot-With-GPT4-mini
 
- # -- КАК НАСТРОИТЬ И КАКИЕ БИБЛИОТЕКИ ИСПОЛЬЗУЮТЬСЯ --
-  #1. Бот написан на стабильной библиотеки telethon
-  #2. Используеться openai специальная библиотека которая с помощью API ключа отправляет запрос GPT модели
+**Телеграм бот с внутренним Chat GPT 4 Mini (или GPT-4o-mini)**
 
-  #1. в строках api_id = 'получите в telegram devs'
-api_hash = 'получите в telegram devs'
-bot_token = 'токен бота' вам надо указать информацию для api_hash и api_id надо зарегистрироваться под аккаунтом в телеграмм в  https://my.telegram.org, а bot_token в https://t.me/BotFather
- #2. Если вы в России то в строках  PROXY_IP = '127.0.0.1'
+---
+
+## 📦 Используемые библиотеки
+
+1.  **`Telethon`** — стабильная библиотека для работы с Telegram API.
+2.  **OpenAI SDK** — библиотека для отправки запросов к GPT-4 mini через API.
+
+---
+
+## ⚙️ Настройка и установка
+
+### 1. Получение ключей Telegram
+Замените значения в коде:
+```python
+api_id = 'получите в telegram devs'   # https://my.telegram.org
+api_hash = 'получите в telegram devs' # https://my.telegram.org
+bot_token = 'токен бота'              # https://t.me/BotFather
+```
+
+### 2. Прокси (только для пользователей из РФ)
+Если вы находитесь в России, укажите свои прокси-данные:
+```python
+PROXY_IP = '127.0.0.1'
 PROXY_PORT = 1443
 SECRET = 'dd31873781a5d45d0f57927e776bb269a0'
 
 proxy = (PROXY_IP, PROXY_PORT, SECRET)
 
-app = TelegramClient(
-    'bot_session',
-    api_id,
-    api_hash,
-    connection=connection.ConnectionTcpMTProxyRandomizedIntermediate,
-    proxy=proxy
-)
- указываете свои прокси данные если вы не из РФ то убираете все упоминание proxy и connection=connection.ConnectionTcpMTProxyRandomizedIntermediate
+app = TelegramClient('bot_session', api_id, api_hash,
+                     connection=connection.ConnectionTcpMTPProxyRandomizedIntermediate,
+                     proxy=proxy)
+```
+> **Если вы НЕ из РФ:** Удалите все упоминания `proxy` и `connection=connection.ConnectionTcpMTPProxyRandomizedIntermediate`.
 
- #3. вам нужно получить api openai ключ  https://platform.openai.com
- #4. SYSTEM_PROMPT это переменная будет отправлять самый 1 запрос gpt для создания персонажа по описанию
+### 3. Получение OpenAI API ключа
+- Зарегистрируйтесь на [https://platform.openai.com](https://platform.openai.com)
+- Создайте API ключ в разделе "API Keys"
 
- # Проект сделан для моего обучения и для заготовки бота с бесплатной моделью GPT
+### 4. Настройка системного промпта
+Переменная `SYSTEM_PROMPT` задаёт "личность" и поведение бота при первом запросе.
+
+---
+
+## 🎯 Назначение проекта
+
+Проект создан для **обучения** и может служить **готовой заготовкой** для быстрого запуска бота с бесплатной моделью GPT.
+
+---
+## 📝 Лицензия
+*Solar Line*
