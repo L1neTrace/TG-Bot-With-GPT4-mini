@@ -16,9 +16,9 @@
 ### 1. Получение ключей Telegram
 Замените значения в коде:
 ```python
-api_id = 'получите в telegram devs'   # https://my.telegram.org
-api_hash = 'получите в telegram devs' # https://my.telegram.org
-bot_token = 'токен бота'              # https://t.me/BotFather
+api_id = 'получите в telegram devs'   #получите на сайте https://my.telegram.org
+api_hash = 'получите в telegram devs' #получите на сайтеhttps://my.telegram.org
+bot_token = 'токен бота'              #получите на сайте https://t.me/BotFather
 ```
 
 ### 2. Прокси (только для пользователей из РФ)
